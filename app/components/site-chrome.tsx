@@ -6,14 +6,17 @@ import { Navbar } from './nav'
 
 export default function SiteChrome() {
   const pathname = usePathname()
-  // hide only on individual articles (/blog/slug)
-  const isArticle = pathname?.startsWith('/blog/') ?? false
+    const isArticle = pathname?.startsWith('/blog/') ?? false
   if (isArticle) return null
 
   return (
-    <>
+    <div className={isArticle ? 'hidden' : ''} aria-hidden={isArticle}>
       <SiteHeader />
       <Navbar />
-    </>
+    </div>
+    // <>
+    //   <SiteHeader />
+    //   <Navbar />
+    // </>
   )
 }
