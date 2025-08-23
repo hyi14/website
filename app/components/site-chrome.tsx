@@ -13,7 +13,7 @@ export default function SiteChrome() {
   return (
     <>
       <SiteHeader />
-{/*       <Navbar /> */}
+      <Navbar />
     </>
   )
 }
