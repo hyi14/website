@@ -2,8 +2,9 @@ import './global.css'
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-import { Navbar } from './components/nav'
-import SiteHeader from './components/site-header'
+// import { Navbar } from './components/nav'
+// import SiteHeader from './components/site-header'
+import SiteChrome from './components/site-chrome'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
 import { Analytics } from '@vercel/analytics/react'
@@ -58,13 +59,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="max-w-4xl mx-auto p-8 relative">
           <div className="space-y-12">
             <div className="fixed inset-0 hidden dark:block pointer-events-none" />
-            {/* header + nav */}
-            <SiteHeader />
-            <Navbar />
+            <SiteChrome />
 
-            {/* page content */}
+{/*             <SiteHeader />
+            <Navbar /> */}
             {children}
-
             <Footer />
             <Analytics />
             <SpeedInsights />
