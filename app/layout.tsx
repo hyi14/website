@@ -2,51 +2,50 @@ import './global.css'
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-// import { Navbar } from './components/nav'
-// import SiteHeader from './components/site-header'
 import SiteChrome from './components/site-chrome'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: 'Hannah Yi',
-  description: 'This is my Website.',
-}
+  description: 'This is my portfolio.',
+  openGraph: {
+    title: 'My Portfolio',
+    description: 'This is my portfolio.',
+    url: baseUrl,
+    siteName: 'My Portfolio',
+    locale: 'en_US',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
 
 const cx = (...c: string[]) => c.filter(Boolean).join(' ')
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const pathname = headers().get('x-invoke-path') || ''
-  const showHeader = !pathname.startsWith('/blog')
-
   return (
     <html
       lang="en"
-      className={cx(
-        // base font + color scheme
-        'font-sans antialiased',
-        GeistSans.variable,
-        GeistMono.variable
-      )}
+      className={cx('font-sans antialiased', GeistSans.variable, GeistMono.variable)}
     >
-      <body
-        className={cx(
-          // FULL-PAGE SHELL like in your screenshot
-          'min-h-screen bg-white dark:bg-gray-900 transition-colors'
-        )}
-      >
-        {/* center the page and add global padding */}
+      <body className="min-h-screen bg-white dark:bg-gray-900 transition-colors">
         <main className="max-w-4xl mx-auto p-8 relative">
           <div className="space-y-12">
-            <div className="fixed inset-0 hidden dark:block pointer-events-none" />
+            {/* Shows header+nav on / and /blog; hidden on /blog/[slug] */}
             <SiteChrome />
-
-{/*             <SiteHeader />
-            <Navbar /> */}
             {children}
             <Footer />
             <Analytics />
