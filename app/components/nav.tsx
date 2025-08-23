@@ -4,11 +4,11 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const links = [
-  { href: '/', label: 'Home' },
+  { href: '/', label: 'Current' },
+  { href: '/former', label: 'Former' },
+  { href: '/other', label: 'Other' },
   { href: '/blog', label: 'Blog' },
-  { href: '/deploy', label: 'Deploy' },
-  // { href: '/blog', label: 'Blog' },
-  // { href: '/contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact' },
 ]
 
 export function Navbar() {
@@ -19,19 +19,18 @@ export function Navbar() {
       <ul className="flex flex-wrap gap-3">
         {links.map(({ href, label }) => {
           const active = href === '/' ? pathname === '/' : pathname.startsWith(href)
+
           return (
             <li key={href}>
               <Link
                 href={href}
                 aria-current={active ? 'page' : undefined}
                 className={[
-                  'px-4 py-2 rounded-full text-sm md:text-base transition',
+                  'px-4 py-2 rounded-[0.5rem] text-sm md:text-base transition',
                   'border border-transparent',
-                  'hover:bg-neutral-200 hover:dark:bg-neutral-800',
-                  'active:bg-neutral-300 active:dark:bg-neutral-700',
-                  active
-                    ? 'bg-neutral-200 dark:bg-neutral-800 font-medium'
-                    : 'bg-transparent'
+                  'hover:bg-[#F3F4F6]',
+                  'active:bg-[#E5E7EB]',
+                  active ? 'bg-[#F3F4F6] font-medium' : 'bg-transparent'
                 ].join(' ')}
               >
                 {label}
