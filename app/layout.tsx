@@ -11,60 +11,44 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  // Constant tab title across the whole site
-  title: 'Hannah Yi',
-  description: 'This is my Website.',
-  openGraph: {
-    title: 'My Website',
-    description: 'This is my Website.',
-    url: baseUrl,
-    siteName: 'My Website',
-    locale: 'en_US',
-    type: 'website',
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+  title: 'My Portfolio',
+  description: 'This is my portfolio.',
 }
 
-const cx = (...classes: string[]) => classes.filter(Boolean).join(' ')
+const cx = (...c: string[]) => c.filter(Boolean).join(' ')
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
+        // base font + color scheme
+        'font-sans antialiased',
         GeistSans.variable,
         GeistMono.variable
       )}
     >
-      <body className="antialiased max-w-4xl mx-4 lg:mx-auto">
-        <main className="flex-auto min-w-0 px-2 md:px-0">
-          {/* bring content down from the top */}
-          <div className="pt-6" />
+      <body
+        className={cx(
+          // FULL-PAGE SHELL like in your screenshot
+          'min-h-screen bg-white dark:bg-gray-900 transition-colors'
+        )}
+      >
+        {/* center the page and add global padding */}
+        <main className="max-w-4xl mx-auto p-8 relative">
+          <div className="space-y-12">
+            <div className="fixed inset-0 hidden dark:block pointer-events-none" />
+            {/* header + nav */}
+            <SiteHeader />
+            <Navbar />
 
-          {/* static site header + pill navbar on every page */}
-          <SiteHeader />
-          <Navbar />
+            {/* page content */}
+            {children}
 
-          {children}
-
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
+            <Footer />
+            <Analytics />
+            <SpeedInsights />
+          </div>
         </main>
       </body>
     </html>
