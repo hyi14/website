@@ -8,16 +8,20 @@ import Footer from './components/footer'
 import { baseUrl } from './sitemap'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: 'My Portfolio',
-  description: 'This is my portfolio.',
+  title: 'Hannah Yi',
+  description: 'This is my Website.',
 }
 
 const cx = (...c: string[]) => c.filter(Boolean).join(' ')
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname = headers().get('x-invoke-path') || ''
+  const showHeader = !pathname.startsWith('/blog')
+
   return (
     <html
       lang="en"
