@@ -6,10 +6,10 @@ import { Navbar } from './nav'
 
 export default function SiteChrome() {
   const pathname = usePathname()
-  // Hide on individual blog articles ONLY
+  // hide only on individual articles (/blog/slug)
   const isArticle = pathname?.startsWith('/blog/') ?? false
-
   if (isArticle) return null
+
   return (
     <>
       <SiteHeader />
