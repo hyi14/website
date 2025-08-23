@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 
 export default function SiteHeader() {
@@ -17,7 +15,7 @@ export default function SiteHeader() {
         </div>
 
         <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-          Hi, I’m <span className="whitespace-nowrap">Your Name</span>!
+          Hi, I’m <span className="whitespace-nowrap">Name</span>!
         </h1>
       </div>
     </header>
