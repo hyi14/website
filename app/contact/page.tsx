@@ -7,10 +7,11 @@ export default function Page() {
   return (
     <section>
       <p>
-        <a href="mailto:hannahyi@uw.edu">[Email]</a>
+        <a href="mailto:hannahyi@uw.edu">[Email]
+        </a>
+        <br />
+        <i>Limit chaos, liberate clarity</i>
       </p>
-      <br> </br>
-      <p><i>Limit chaos, liberate clarity</i></p>
     </section>
-  )
+  );
 }
