@@ -5,13 +5,15 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section className ="prose">
+    <section>
         <ul>
-          <li>Point 1</li>
-          <li>Point 2</li>
-          <li>Point 3</li>
-          <li>Point 4</li>
-          <li>Point 5</li>
+          <li>• UW - Informatics Teaching Assistant</li>
+          <li>• Develop for Good ChangeArts - Design Manager</li>
+          <li>• HPE - Student Consultant</li>
+          <li>• Women In Informatics (WINFO) - President, Director of Community Efforts</li>
+          <li>• Poke Bay - Product Designer</li>
+          <li>• Hosted University of Washington’s largest hackathon for secondary school students in low-income districts</li>
+          <li>• Hackathon Judge, Design Mentor</li>
         </ul>
     </section>
   )
