@@ -115,6 +115,9 @@ html {
   @apply list-decimal pl-6;
 }
 
+.blog-article p {
+  @apply text-lg;
+}
 .prose > :first-child {
   /* Override removing top margin, causing layout shift */
   margin-top: 1.25em !important;
