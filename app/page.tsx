@@ -2,8 +2,7 @@ import { BlogPosts } from 'app/components/posts'
 
 export default function Page() {
   return (
-    <section>
-      <p className="mb-4">
+    <section className="mb-4 prose">
         <ul>
           <li>Point 1</li>
           <li>Point 2</li>
@@ -11,7 +10,6 @@ export default function Page() {
           <li>Point 4</li>
           <li>Point 5</li>
         </ul>
-      </p>
       <div className="my-8">
         <BlogPosts />
       </div>
