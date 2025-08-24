@@ -5,7 +5,7 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section>
+    <section className ="prose">
         <ul>
           <li>Point 1</li>
           <li>Point 2</li>
