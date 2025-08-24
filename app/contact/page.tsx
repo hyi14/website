@@ -5,12 +5,13 @@ export const metadata = {
 
 export default function Page() {
   return (
-    <section>
+    <section className="space-y-2">
       <p>
         <a href="mailto:hannahyi@uw.edu">[Email]</a>
-        <br />
       </p>
-      <p><i>Limit chaos, liberate clarity</i></p>
+      <p>
+        <i>Limit chaos, liberate clarity</i>
+      </p>
     </section>
   );
 }
