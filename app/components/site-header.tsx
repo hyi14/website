@@ -11,12 +11,15 @@ export default function SiteHeader() {
             fill
             sizes="80px"
             className="object-cover"
+            priority
           />
         </div>
-
-        <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-          Hi, I’m <span className="whitespace-nowrap">Name</span>!
-        </h1>
+        
+        <div className="prose">
+          <h1 className="!m-0">
+            Hi, I’m <span className="whitespace-nowrap">Name</span>!
+          </h1>
+        </div>
       </div>
     </header>
   )
