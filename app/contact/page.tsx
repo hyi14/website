@@ -3,11 +3,12 @@ export const metadata = {
   description: 'Get in touch with me.',
 }
 
-export default function ContactPage() {
+export default function Page() {
   return (
     <section>
-      <p><a href="hannahyi@uw.edu">[Email]</a></p>
-      <br></br>
+      <p>
+        <a href="mailto:hannahyi@uw.edu">[Email]</a>
+      </p>
       <p><i>Limit chaos, liberate clarity</i></p>
     </section>
   )
