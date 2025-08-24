@@ -9,8 +9,8 @@ export default function Page() {
       <p>
         <a href="mailto:hannahyi@uw.edu">[Email]</a>
         <br />
-        <i>Limit chaos, liberate clarity</i>
       </p>
+      <p><i>Limit chaos, liberate clarity</i></p>
     </section>
   );
 }
