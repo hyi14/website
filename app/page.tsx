@@ -7,7 +7,7 @@ export default function Page() {
         <ul>
           <li>• Independent Researcher on AI Governance</li>
           <li>• UW Cybersecurity Teaching Assistant - cultivating next generation of cybersecurity leaders</li>
-          <li>• UW iSchool Research Assistant - Creative ownership and digital remixing</li>
+          <li>• iSchool Research Assistant - Creative ownership and digital remixing</li>
         </ul>
       </p>
       <div className="my-8">
