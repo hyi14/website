@@ -7,7 +7,8 @@ export default function ContactPage() {
   return (
     <section>
       <p><a href="hannahyi@uw.edu">[Email]</a></p>
-      <p><i>Limit chaos, liberate clarity</i></p>
+      <br></br>
+      <p><i>Move in systems to limit chaos, liberate clarity</i></p>
     </section>
   )
 }
