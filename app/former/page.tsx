@@ -1,12 +1,11 @@
 export const metadata = {
-  title: ‘Former’,
-  description: ‘Discover my past work.’,
+  title: 'Former',
+  description: 'Discover my past work.',
 }
 
 export default function Page() {
   return (
     <section>
-      <p className="mb-4">
         <ul>
           <li>Point 1</li>
           <li>Point 2</li>
@@ -14,7 +13,6 @@ export default function Page() {
           <li>Point 4</li>
           <li>Point 5</li>
         </ul>
-      </p>
     </section>
   )
 }
